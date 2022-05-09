@@ -1,4 +1,4 @@
-# construction_overlap
+# construction (cx) overlap codes
 This is a forked repo from [Philip Tillman's fluencysimilarity repo](https://bitbucket.org/philtillman/fluencysimilarity/src/master/).
 
 The original Tillman's code is used in their publication.
