@@ -1,0 +1,27 @@
+cooccur -t* +t%pst +s@"|-*,o-%" -s"fil|*" +n3 +f
+Thu Feb 07 16:27:38 2013
+cooccur (30-Jan-2013) is conducting analyses on:
+  ONLY dependent tiers matching: %PST;
+****************************************
+From file <F:\WORK\DONT DELETE\MY PROJECTS\FLUENCY-ESL_YEAR4-5\ANALYSES\STUDY7\FINAL\TP_993_2_a1_111855_checked_AS-mlv_trans.str.fix.fxb.mor.pst_err-jms.chstr.cex>
+    1  adj conj:sub pro:exist
+    1  adj n n
+    3  adj n v
+    1  adv:adj pro v
+    1  adv:tem det adj
+    2  adv:tem pro v
+    2  aux part pro:poss:det
+    1  aux v pro:poss:det
+    1  aux~neg v adj
+    1  aux~neg v prep
+    1  aux~neg v pro
+    1  conj:coo adv:adj pro
+    1  conj:coo adv:tem det
+    1  conj:coo det adj
+    1  conj:coo pro aux~neg
+    1  conj:coo pro:poss:det n
+    2  conj:sub det adj
+    1  conj:sub det n
+    1  conj:sub pro v
+    1  conj:sub pro:exist v:cop
+    5  det adj n
