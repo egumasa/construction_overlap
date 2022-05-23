@@ -7,6 +7,14 @@ for similarity: Jaccard Similarity and Cosine Similarity of tf-idf vectors. Thes
 unigrams and trigrams of words and/or parts of speech tokens. The idea is that we can measure the relative fluency
 of a pair of text using these measures.
 
+## TODO
+- [ ] Refactor Tillman's code to allow a single, specified text file to compare to.
+  - [ ] change ParseFileName
+  - [x] Add CompareToSource method.
+  - [ ] Refactor output file writing pipeline.
+- [ ] Refactor Tillman's code to allow different formatting of input files.
+- [ ] 
+
 ### How do I get set up? ###
 * Install [Anaconda3](https://www.anaconda.com/distribution/#download-section).
 * Open a command prompt

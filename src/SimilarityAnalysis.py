@@ -15,37 +15,62 @@ def Run():
     E.g., SimilarityAnalysis -t trigram -d "C:\pos"
     """
     parser = DefaultHelpParser(description=descr)
-    parser.add_argument('--type', '-t', dest="analysisType", default=True,
-                        help='the type of analysis: unigram or trigram. Default is unigram.')
-    parser.add_argument('--directory', '-d', dest="directoryOfTexts",
-                        help='the directory path containing the input files.', required=True)
-    parser.add_argument('--use-semi-colon-delimiters', dest='useSemiColonDelimiters', action='store_true')
-    parser.add_argument('--output-directory', '-o', dest="outputDirectory",
-                        help='the directory path to store the overlapping tokens.')
-    parser.add_argument('-abc', dest='compare_abc', action='store_true',
-                        help='If set then it will compare between a, b and c, otherwise deliveries.')
-    parser.add_argument("--begin-line", dest="begin_line", type=int,
-                        help="Start reading the input files from this line. Useful to have metadata in the files that we want to ignore.")
+    parser.add_argument(
+        '--type',
+        '-t',
+        dest="analysisType",
+        default=True,
+        help='the type of analysis: unigram or trigram. Default is unigram.')
+    parser.add_argument('--directory',
+                        '-d',
+                        dest="directoryOfTexts",
+                        help='the directory path containing the input files.',
+                        required=True)
+    parser.add_argument('--use-semi-colon-delimiters',
+                        dest='useSemiColonDelimiters',
+                        action='store_true')
+    parser.add_argument(
+        '--output-directory',
+        '-o',
+        dest="outputDirectory",
+        help='the directory path to store the overlapping tokens.')
+    parser.add_argument(
+        '-abc',
+        dest='compare_abc',
+        action='store_true',
+        help=
+        'If set then it will compare between a, b and c, otherwise deliveries.'
+    )
+    parser.add_argument(
+        "--begin-line",
+        dest="begin_line",
+        type=int,
+        help=
+        "Start reading the input files from this line. Useful to have metadata in the files that we want to ignore."
+    )
 
     args = parser.parse_args()
     extension = ".cex"  # default
     analysisType = args.analysisType
     directoryOfTexts = args.directoryOfTexts  # C:\temp\*.txt
     useSemiColonDelimiters = args.useSemiColonDelimiters
-    outputDirectory = args.outputDirectory;
+    outputDirectory = args.outputDirectory
     compare_abc = args.compare_abc
     begin_line = args.begin_line
 
     pathAsArray = directoryOfTexts.split("*")
     if len(pathAsArray) == 2 and pathAsArray[1].startswith(".") and (
-            pathAsArray[0].endswith("\\") or pathAsArray[0].endswith("/")):  # is the path of the form C:\temp\*.txt
+            pathAsArray[0].endswith("\\") or pathAsArray[0].endswith("/")
+    ):  # is the path of the form C:\temp\*.txt
         extension = pathAsArray[1]  # .txt
         directoryOfTexts = pathAsArray[0]  # C:\temp\
 
     if analysisType == "trigram":
-        fdr = TrigramFreqDictReader(directoryOfTexts, extension, compare_abc, begin_line)
+        fdr = TrigramFreqDictReader(directoryOfTexts, extension, compare_abc,
+                                    begin_line)  #this reads the Trigram
     else:
-        fdr = UnigramFreqDictReader(directoryOfTexts, extension, compare_abc, begin_line)
+        fdr = UnigramFreqDictReader(directoryOfTexts, extension, compare_abc,
+                                    begin_line)
 
     filesGroupedByStudents = fdr.GetFilesGroupedByStudents()
     ir = IRSystem(fdr)
@@ -53,14 +78,17 @@ def Run():
     for studentKey in filesGroupedByStudents:
         if studentKey not in similaritiesPerStudent:
             similaritiesPerStudent[studentKey] = {}
-        j = fdr.CompareFiles(filesGroupedByStudents[studentKey], ir.JaccardSimilarity, "JaccardSimilarity")
+        j = fdr.CompareFiles(filesGroupedByStudents[studentKey],
+                             ir.JaccardSimilarity, "JaccardSimilarity")
         for comparison in j:
             similaritiesPerStudent[studentKey][comparison] = j[comparison]
-        c = fdr.CompareFiles(filesGroupedByStudents[studentKey], ir.CosineSimilarity, "CosineSimilarity")
+        c = fdr.CompareFiles(filesGroupedByStudents[studentKey],
+                             ir.CosineSimilarity, "CosineSimilarity")
         for comparison in c:
             similaritiesPerStudent[studentKey][comparison] = c[comparison]
         if (outputDirectory is not None):
-            fdr.GenerateTokenIntersections(filesGroupedByStudents[studentKey], outputDirectory)
+            fdr.GenerateTokenIntersections(filesGroupedByStudents[studentKey],
+                                           outputDirectory)
 
     delimeter = ","
     if (useSemiColonDelimiters):
@@ -69,10 +97,13 @@ def Run():
     for studentKey in similaritiesPerStudent:
         similarities = ""
         for comparison in sorted(similaritiesPerStudent[studentKey].keys()):
-            similarities += comparison + "_" + str(similaritiesPerStudent[studentKey][comparison]) + delimeter
+            similarities += comparison + "_" + str(
+                similaritiesPerStudent[studentKey][comparison]) + delimeter
             if comparison not in comparisons:
                 comparisons.add(comparison)
-        row = str.format("{0}{2}{1}{2}", delimeter.join(str.split(studentKey, "_")), similarities, delimeter)
+        row = str.format("{0}{2}{1}{2}",
+                         delimeter.join(str.split(studentKey, "_")),
+                         similarities, delimeter)
         # print(row)
 
     comparisons = sorted(comparisons)
