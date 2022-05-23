@@ -9,6 +9,13 @@ My colleague and I have reused the code in the following publication:
 
 Suzuki, Y., Eguchi, M., & Jong, N. (2022). Does the Reuse of Constructions Promote Fluency Development in Task Repetition? A Usage‐Based Perspective. TESOL Quarterly, tesq.3103. https://doi.org/10.1002/tesq.3103
 
+## TODO
+- [ ] Refactor Tillman's code to allow a single, specified text file to compare to.
+  - [ ] change ParseFileName
+  - [x] Add CompareToSource method.
+  - [ ] Refactor output file writing pipeline.
+- [ ] Refactor Tillman's code to allow different formatting of input files.
+- [ ] 
 
 # FluencySimilarity
 
