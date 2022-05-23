@@ -7,7 +7,7 @@ de Jong, N., & Tillman, P. (2018). Chapter 2. Grammatical structures and oral fl
 
 My colleague and I have reused the code in the following publication:
 
-Suzuki, Y., Eguchi, M., & Jong, N. (2022). Does the Reuse of Constructions Promote Fluency Development in Task Repetition? A Usage‐Based Perspective. TESOL Quarterly, tesq.3103. https://doi.org/10.1002/tesq.3103
+Suzuki, Y., Eguchi, M., & de Jong, N. (2022). Does the Reuse of Constructions Promote Fluency Development in Task Repetition? A Usage‐Based Perspective. TESOL Quarterly, tesq.3103. https://doi.org/10.1002/tesq.3103
 
 ## TODO
 - [ ] Refactor Tillman's code to allow a single, specified text file to compare to.
