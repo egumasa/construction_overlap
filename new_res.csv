@@ -1,0 +1,10 @@
+TP,1343,2,JaccardSimilarity,2,0.0
+TP,1343,2,CosineSimilarity,2,0
+NoTP,918,2,JaccardSimilarity,2,1.0
+NoTP,918,2,CosineSimilarity,2,1.0000000000000004
+TP,993,1,JaccardSimilarity,1,0.1388888888888889
+TP,993,1,CosineSimilarity,1,0.24846218889762783
+NoTP,918,1,JaccardSimilarity,1,0.6190476190476191
+NoTP,918,1,CosineSimilarity,1,0.5465012875149394
+TP,993,2,JaccardSimilarity,2,0.046511627906976744
+TP,993,2,CosineSimilarity,2,0.017380950606495204

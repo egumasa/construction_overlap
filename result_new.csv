@@ -1,0 +1,29 @@
+usage: SimilarityAnalysis.py [-h] [--type ANALYSISTYPE] --directory
+                             DIRECTORYOFTEXTS [--use-semi-colon-delimiters]
+                             [--output-directory OUTPUTDIRECTORY] [-abc]
+                             [--begin-line BEGIN_LINE]
+                             [--compare-to-source COMPSOURCE]
+                             [--source-text-path SOURCEPATH]
+
+Compute Jaccard and Cosine similarities of tokens in a text like trigrams of
+words. E.g., SimilarityAnalysis -t trigram -d "C:\pos"
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --type ANALYSISTYPE, -t ANALYSISTYPE
+                        the type of analysis: unigram or trigram. Default is
+                        unigram.
+  --directory DIRECTORYOFTEXTS, -d DIRECTORYOFTEXTS
+                        the directory path containing the input files.
+  --use-semi-colon-delimiters
+  --output-directory OUTPUTDIRECTORY, -o OUTPUTDIRECTORY
+                        the directory path to store the overlapping tokens.
+  -abc                  If set then it will compare between a, b and c,
+                        otherwise deliveries.
+  --begin-line BEGIN_LINE
+                        Start reading the input files from this line. Useful
+                        to have metadata in the files that we want to ignore.
+  --compare-to-source COMPSOURCE, -model COMPSOURCE
+                        compare to source rather than between performances.
+  --source-text-path SOURCEPATH, -s SOURCEPATH
+                        compare to source rather than between performances.

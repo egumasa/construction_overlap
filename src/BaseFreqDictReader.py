@@ -60,8 +60,7 @@ class BaseFreqDictReader(FreqDictReader):
                 continue
             condition1, studentId1, session1, story1, delivery1 = self.ParseFilePath(
                 filePath1)
-            comparison = str.format("{3}_{0}{1}", story1, delivery1,
-                                    simMethodName)
+            comparison = str.format("{1}_{0}", session1, simMethodName)
             if comparison not in similarities:
                 similarities[comparison] = simMethod(filePath1, sourceFilePath)
         return similarities
@@ -149,12 +148,18 @@ class BaseFreqDictReader(FreqDictReader):
         return self.ParseFileName(fileName)
 
     def ParseFileName(self, fileName):  #consider changing this!!
+        '''filename format 
+        '''
+        condition, studentId, session, delivery, story = 'NA', 'NA', 'NA', 'NA', 'NA'
         fileNameAsArray = fileName.split('_')
-        condition = fileNameAsArray[0]
-        studentId = int(fileNameAsArray[1])
-        session = fileNameAsArray[2]
-        story = fileNameAsArray[3][0]
-        delivery = int(fileNameAsArray[3][1])
+
+        if len(fileNameAsArray) > 3:
+            delivery = int(fileNameAsArray[3][1])
+            story = fileNameAsArray[3][0]
+        if len(fileNameAsArray) >= 3:
+            condition = fileNameAsArray[0]
+            studentId = int(fileNameAsArray[1])
+            session = fileNameAsArray[2]
         return condition, studentId, session, story, delivery
 
 
