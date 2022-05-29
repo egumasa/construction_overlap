@@ -1,5 +1,8 @@
 # construction (cx) overlap codes
-This is a forked repo from [Philip Tillman's fluencysimilarity repo](https://bitbucket.org/philtillman/fluencysimilarity/src/master/).
+This is a forked repo from [Philip Tillman's fluencysimilarity repo](https://bitbucket.org/philtillman/fluencysimilarity/src/master/). The original code is used to measure Jaccard and Cosine similarities between two sets of texts (i.e., overlapping unigrams, trigrams, etc.). We are extending their approach mainly in two ways:
+
+1) Adding measures of source text overlap measure, in addition to comparison between performances.
+2) Adding more fine-grained measures of lingusitic constructions (which require more advanced Natural Language Processing component beyond simple ngrams).
 
 The original Tillman's code is used in their publication.
 
