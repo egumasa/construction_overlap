@@ -131,6 +131,7 @@ def Run():
 
     # Added on May 27, 2022: New output function
     with open(outputName, 'w') as outf:
+        outf.write("Condition,StudentId,Session,Measure,Score\n")
         for studentKey, similarities in similaritiesPerStudent.items():
             condition, studentId, session = studentKey.split("_")
             for measure_session, value in similarities.items():
@@ -140,7 +141,6 @@ def Run():
                     str(studentId),
                     str(session),
                     str(measure),
-                    str(session),
                     str(value)
                 ]))
                 outf.write("\n")

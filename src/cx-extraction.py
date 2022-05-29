@@ -122,7 +122,7 @@ def text_to_ngrams(filename, length=1):
 
 
 # if __name__ == "__main__":
-filename = glob.glob('rawtexts/*')
+filename = glob.glob('rawtexts/*.txt')
 
 for file in filename:
     text_to_ngrams(file, length=3)
