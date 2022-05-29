@@ -55,12 +55,11 @@ def Run():
         type=bool,
         help="compare to source rather than between performances.",
         default=False)
-    parser.add_argument(
-        "--source-text-path",
-        "-s",
-        dest="sourcePath",
-        type=str,
-        help="compare to source rather than between performances.")
+    parser.add_argument("--source-text-path",
+                        "-s",
+                        dest="sourcePath",
+                        type=str,
+                        help="Path to the source text.")
     parser.add_argument("--output-name",
                         "-oname",
                         dest="outName",
@@ -75,9 +74,9 @@ def Run():
     outputDirectory = args.outputDirectory
     compare_abc = args.compare_abc
     begin_line = args.begin_line
-    compare_to_source = args.compSource
-    sourceFilePath = args.sourcePath
-    outputName = args.outName
+    compare_to_source = args.compSource  # Added on May 27, 2022
+    sourceFilePath = args.sourcePath  # Added on May 27, 2022
+    outputName = args.outName  # Added on May 27, 2022
 
     pathAsArray = directoryOfTexts.split("*")
     if len(pathAsArray) == 2 and pathAsArray[1].startswith(".") and (
@@ -130,6 +129,7 @@ def Run():
             fdr.GenerateTokenIntersections(filesGroupedByStudents[studentKey],
                                            outputDirectory)
 
+    # Added on May 27, 2022: New output function
     with open(outputName, 'w') as outf:
         for studentKey, similarities in similaritiesPerStudent.items():
             condition, studentId, session = studentKey.split("_")

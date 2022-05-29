@@ -1,0 +1,4 @@
+sample_rawtexts
+input/trigram/*
+input/trigram_POS/*
+rawtexts/*
