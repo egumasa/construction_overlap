@@ -10,14 +10,18 @@ My colleague and I have reused the code in the following publication:
 Suzuki, Y., Eguchi, M., & de Jong, N. (2022). Does the Reuse of Constructions Promote Fluency Development in Task Repetition? A Usage‐Based Perspective. TESOL Quarterly, tesq.3103. https://doi.org/10.1002/tesq.3103
 
 ## TODO
-- [ ] Refactor Tillman's code to allow a single, specified text file to compare to.
-  - [ ] change ParseFileName
+- [x] Refactor Tillman's code to allow a single, specified text file to compare to.
+  - [x] change ParseFileName
   - [x] Add CompareToSource method.
   - [ ] Refactor output file writing pipeline.
-- [ ] Refactor Tillman's code to allow different formatting of input files.
-- [ ] 
+  - [ ] More flexible study design and fileformat.
+- [x] Refactor Tillman's code to allow different formatting of input files.
+- [x] Simple construction (cx) extraction code using spaCy pipeline
+  - [x] Simple N-grams and POS-ngrams 
+  - [ ] More complex constituency-based constructions
+  - [ ] More complex Verb-argument constructions
 
-# FluencySimilarity
+# FluencySimilarity (Readme from Tillman's repo)
 
 This repository contains scripts to compare textual similarity using trigrams and unigram (words) using two metrics 
 for similarity: Jaccard Similarity and Cosine Similarity of tf-idf vectors. These measures are used to compare
