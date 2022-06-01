@@ -1,6 +1,0 @@
-Condition,StudentId,Session,CosineSimilarity_a1_a2,CosineSimilarity_a1_a3,CosineSimilarity_a2_a3,JaccardSimilarity_a1_a2,JaccardSimilarity_a1_a3,JaccardSimilarity_a2_a3
-TP,1343,2,0.133604027,0.162121386,0.185109579,0.10483871,0.104347826,0.138686131
-NoTP,918,2,0.407851898,,,0.477272727,,
-TP,993,1,0.496841986,,,0.620689655,,
-NoTP,918,1,,,,,,
-TP,993,2,,,,,,
