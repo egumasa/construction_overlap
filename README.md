@@ -6,11 +6,11 @@ This is a forked repo from [Philip Tillman's fluencysimilarity repo](https://bit
 
 The original Tillman's code is used in their publication.
 
-de Jong, N., & Tillman, P. (2018). Chapter 2. Grammatical structures and oral fluency in immediate task repetition: Trigrams across repeated performances. In M. Bygate (Ed.), Task-Based Language Teaching (Vol. 11, pp. 43–73). John Benjamins Publishing Company. https://doi.org/10.1075/tblt.11.02jon
+- de Jong, N., & Tillman, P. (2018). Chapter 2. Grammatical structures and oral fluency in immediate task repetition: Trigrams across repeated performances. In M. Bygate (Ed.), Task-Based Language Teaching (Vol. 11, pp. 43–73). John Benjamins Publishing Company. https://doi.org/10.1075/tblt.11.02jon
 
 My colleague and I have reused the code in the following publication:
 
-Suzuki, Y., Eguchi, M., & de Jong, N. (2022). Does the Reuse of Constructions Promote Fluency Development in Task Repetition? A Usage‐Based Perspective. TESOL Quarterly, tesq.3103. https://doi.org/10.1002/tesq.3103
+- Suzuki, Y., Eguchi, M., & de Jong, N. (2022). Does the Reuse of Constructions Promote Fluency Development in Task Repetition? A Usage‐Based Perspective. TESOL Quarterly, tesq.3103. https://doi.org/10.1002/tesq.3103
 
 ## TODO
 - [x] Refactor Tillman's code to allow a single, specified text file to compare to.
